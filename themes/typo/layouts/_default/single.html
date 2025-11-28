@@ -1,0 +1,116 @@
+{{ define "main" }}
+
+{{/* Breadcrumbs */}}
+
+{{ if not .IsHome }}
+{{ partial "breadcrumbs.html" . }}
+{{ end }}
+
+<div {{ if .Param "autonumber" }} class="autonumber" {{ end }}>
+  <article>
+    <header class="single-intro-container">
+        {{- /* Title and Summary */}}
+        
+        <h1 class="single-title">{{ .Title }}</h1>
+        {{- with .Param "summary" }}
+        <p class="single-summary">{{ . | markdownify }}</p>
+        {{- end }}
+   
+        {{- /* Date, Reading Time and Author */}}
+        {{ if or (or (.Param "author") (.Param "authorAvatarPath")) (or .Date (.Param "readTime")) }}
+        <div class="single-subsummary">
+          {{ with $.Param "authorAvatarPath" }}
+            <img src="{{ . }}" alt="Author Avatar" />
+          {{ end }}
+          <div>
+            {{ with .Param "author" }}
+            <p class="author"> {{- .}} </p>
+            {{ end }}
+            <p class="single-date">
+            {{- with .Date }}
+              {{- $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+              {{- $dateHuman := . | time.Format (default ":date_long" $.Site.Params.singleDateFormat) }}
+              <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+            {{- end }}
+        
+            {{- if .Param "readTime" }}
+              {{ if .Date }}&nbsp; · &nbsp;{{ end }}
+              {{- .ReadingTime }} min read
+            {{- end }}
+            </p>
+          </div>
+        </div>
+        {{- end}}
+        
+    </header>
+    
+    {{- if .Param "showTags" }}
+      {{- $taxonomy := "tags" }}
+      {{- with .Param $taxonomy }}    
+        <div class="single-tags">
+            {{- range $index, $tag := . }}
+            {{- with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) -}}
+                <span>
+                  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+                </span>
+            {{- end }}
+            {{- end }}
+        </div>
+      {{- end }}
+    {{- end }}
+    
+    {{- /* Table of Contents */}}
+    
+    {{- if .Param "toc" }}
+      <aside class="toc">
+        <p><strong>Table of contents</strong></p>
+        {{ .TableOfContents }}
+      </aside>
+    {{- end }}
+    
+    {{- /* Page content */}}
+    
+    <div class="single-content">
+      {{ .Content }}
+    </div>
+  </article>
+  
+  {{- /* Comments */}}
+
+  {{- if and .Site.Params.giscus.enable (not .Params.disableComment) }}
+    <div class="single-comments">
+      {{ partial "comments.html" . }}
+    </div>
+  {{- end }}
+
+  {{ if .Store.Get "hasMermaid" }}
+  {{ $mermaidDarkTheme := default "dark" (or .Params.mermaidDarkTheme .Site.Params.mermaidDarkTheme) }}
+  {{ $mermaidTheme := default "default" (or .Params.mermaidTheme .Site.Params.mermaidTheme) }}
+  <script defer
+    type="module"
+    id="mermaid_script"
+    data-light-theme="{{ $mermaidTheme }}"
+    data-dark-theme="{{ $mermaidDarkTheme }}"
+    src='{{ "js/mermaid.js" | relURL }}'>
+  </script>
+  {{ end }}
+
+  {{/* Next prev controls */}}
+
+  {{ if not (.Param "hidePagination") }}
+  {{ partial "pagination-single.html" . }}
+  {{ end }}
+
+  {{/* Back to top */}}
+
+  {{ if not (.Param "hideBackToTop") }}
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  {{ end }}
+
+</div>
+
+{{ end }}

@@ -1,0 +1,15 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+defaultContentLanguage = 'en-us'
+title = 'typo'
+
+[module]
+[module.hugoVersion]
+extended = false
+min = "0.116.0"
+
+# Default config
+[params.breadcrumbs]
+enabled = true
+showCurrentPage = true
+home = "Home"
