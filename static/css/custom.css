@@ -1,0 +1,32 @@
+/* Custom overrides for lighter font and wider layout */
+
+:root {
+    --main-width: 960px;
+}
+
+body {
+    font-weight: 300;
+}
+
+p {
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+li {
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+code {
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --main-width: 900px;
+    }
+}
