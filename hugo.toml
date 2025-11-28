@@ -1,0 +1,44 @@
+baseURL = 'https://antsankov.com/'
+languageCode = 'en-us'
+defaultContentLanguage = 'en-us'
+title = 'antsankov'
+theme = 'typo'
+
+# Publish directory for GitHub Pages
+publishDir = 'public'
+
+[module]
+[module.hugoVersion]
+extended = false
+min = "0.116.0"
+
+# Theme config
+[params]
+footerContent = "[Site Source Code](https://github.com/antsankov/antsankov.com) - Served with minimal JS and no external CSS."
+
+[params.breadcrumbs]
+enabled = false
+showCurrentPage = true
+home = "Home"
+
+[params.header]
+enabled = true
+
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "blog"
+url = "/blog/"
+
+[menu]
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+url = "/blog/"
+weight = 2
