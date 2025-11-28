@@ -15,6 +15,7 @@ min = "0.116.0"
 # Theme config
 [params]
 footerContent = "[Site Source Code](https://github.com/antsankov/antsankov.com) - Served with minimal JS and no external CSS."
+paginationSize = 10
 
 [params.breadcrumbs]
 enabled = false
