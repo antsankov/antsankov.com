@@ -3,6 +3,7 @@ title: "From Wagon to a Jet Plane: Vibe Coding Musings from an Experienced Devel
 date: 2025-11-28
 draft: false
 tags: ["coding", "AI", "software", "agents"]
+summary: "Vibe-coding enables a developer to move so fast, that the act of coding becomes entirely different. Tips from working with AI coding assistants for a few months while having 10 years of traditional software engineering experience."
 ---
 
 Vibe-coding enables a developer to move so fast, that the act of coding becomes entirely  different. It feels 

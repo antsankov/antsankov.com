@@ -16,6 +16,7 @@ min = "0.116.0"
 [params]
 footerContent = "[Site Source Code](https://github.com/antsankov/antsankov.com) - Served with minimal JS and no external CSS."
 paginationSize = 10
+faviconPath = ""
 
 [params.breadcrumbs]
 enabled = false
