@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/assets/base.css">
     <link rel="stylesheet" href="/assets/skeleton.css">
     <link rel="stylesheet" href="/assets/fork.css" />
+    <link rel="stylesheet" href="/assets/dark.css" />
     <link rel='icon' href='/favicon.ico' type='image/x-icon'/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57895312-1"></script>
@@ -18,8 +19,41 @@
       gtag('config', 'UA-57895312-1');
     </script>
     <!-- END GA -->
+    <script>
+      // Set theme before page renders to avoid flash
+      (function() {
+        document.body.classList.add('auto');
+        let cls = 'dark';
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          cls = 'light';
+        }
+        document.body.classList.remove('auto');
+        document.body.classList.add(cls);
+      })();
+      
+      // Theme toggle function
+      function toggleTheme() {
+        const body = document.body;
+        const isDark = body.classList.contains('dark');
+        body.classList.remove('dark', 'light', 'auto');
+        body.classList.add(isDark ? 'light' : 'dark');
+        updateThemeButton();
+      }
+      
+      function updateThemeButton() {
+        const button = document.getElementById('theme-toggle');
+        if (button) {
+          button.textContent = document.body.classList.contains('dark') ? '☀' : '☾';
+          button.title = document.body.classList.contains('dark') ? 'Switch to light mode' : 'Switch to dark mode';
+        }
+      }
+      
+      // Initialize button text on load
+      window.addEventListener('DOMContentLoaded', updateThemeButton);
+    </script>
   </head>
-  <body>
+  <body class="auto">
+    <a href="#" id="theme-toggle" class="theme-toggle" onclick="toggleTheme(); return false;">☀</a>
     <a class="github-fork-ribbon left-bottom fixed" href="https://github.com/antsankov/antsankov.com" target="_blank" data-ribbon="Fork this page!" title="Fork this page!">Fork this Page!</a>
     <div class="container">
       <div class="sixteen columns">

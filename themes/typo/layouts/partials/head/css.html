@@ -24,3 +24,16 @@ $combined := $CSS
 }}
 
 <link rel="stylesheet" href="{{ $combined.RelPermalink }}" media="all">
+
+<style>
+/* Fork ribbon visibility - hide on mobile */
+.github-fork-ribbon {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .github-fork-ribbon {
+    display: block;
+  }
+}
+</style>

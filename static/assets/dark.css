@@ -1,0 +1,130 @@
+/* Solarized Light mode */
+body.light {
+  background: #fdf6e3;
+  color: #000000;
+}
+body.light h1, body.light h2, body.light h3, body.light h4, body.light h5, body.light h6 {
+  color: #000000;
+}
+body.light a, body.light a:visited {
+  color: #2171b5;
+}
+body.light a:hover, body.light a:focus {
+  color: #4292c6;
+}
+body.light strong {
+  color: #000000;
+}
+body.light th {
+  color: #000000;
+}
+body.light td {
+  color: #000000;
+}
+body.light hr {
+  border-color: #93a1a1;
+}
+body.light .subheader, body.light p.lead {
+  color: #586e75;
+}
+body.light blockquote, body.light blockquote p {
+  color: #586e75;
+}
+body.light blockquote {
+  border-left-color: #93a1a1;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body.auto {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+  body.auto h1, body.auto h2, body.auto h3, body.auto h4, body.auto h5, body.auto h6 {
+    color: #f0f0f0;
+  }
+  body.auto a, body.auto a:visited {
+    color: #6db3f2;
+  }
+  body.auto a:hover, body.auto a:focus {
+    color: #9ecbf5;
+  }
+  body.auto strong {
+    color: #e0e0e0;
+  }
+  body.auto th {
+    color: #e0e0e0;
+  }
+  body.auto td {
+    color: #d0d0d0;
+  }
+  body.auto hr {
+    border-color: #444;
+  }
+  body.auto .subheader, body.auto p.lead {
+    color: #999;
+  }
+  body.auto blockquote, body.auto blockquote p {
+    color: #999;
+  }
+  body.auto blockquote {
+    border-left-color: #444;
+  }
+}
+
+/* Force dark mode when body has dark class */
+body.dark {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
+  color: #f0f0f0;
+}
+body.dark a, body.dark a:visited {
+  color: #6db3f2;
+}
+body.dark a:hover, body.dark a:focus {
+  color: #9ecbf5;
+}
+body.dark strong {
+  color: #e0e0e0;
+}
+body.dark th {
+  color: #e0e0e0;
+}
+body.dark td {
+  color: #d0d0d0;
+}
+body.dark hr {
+  border-color: #444;
+}
+body.dark .subheader, body.dark p.lead {
+  color: #999;
+}
+body.dark blockquote, body.dark blockquote p {
+  color: #999;
+}
+body.dark blockquote {
+  border-left-color: #444;
+}
+
+/* Theme toggle link */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+/* Fork ribbon visibility */
+.github-fork-ribbon {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .github-fork-ribbon {
+    display: block;
+  }
+}
