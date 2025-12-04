@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Literata';
     src: url('/fonts/Literata/Literata-Light.woff2') format('woff2');
-    font-weight: light;
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'Literata';
     src: url('/fonts/Literata/Literata-LightItalic.woff2') format('woff2');
-    font-weight: light;
+    font-weight: 300;
     font-style: italic;
     font-display: swap;
 }
