@@ -5,6 +5,11 @@ draft: false
 tags: ["coding", "AI", "software", "agents"]
 ---
 
+<div style="display: flex; gap: 8px; width: 100%;">
+  <img src="/assets/wagon.jpg" alt="Wagon" style="width: 50%; height: auto; object-fit: cover;">
+  <img src="/assets/jet.jpg" alt="Jet" style="width: 50%; height: auto; object-fit: cover;">
+</div>
+
 Vibe-coding enables a developer to move so fast, that the act of coding becomes entirely  different. It feels 
 like going from driving a wagon across the empty plains to piloting an intercontinental jet plane. You can cover the distance in one hour that used to take days previously. The AI will also delight you with solutions you never expected. Some tips after working with it for a few months (while having 10 years of traditional software engineering experience).
 

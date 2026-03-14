@@ -7,6 +7,11 @@ theme = 'typo'
 # Publish directory for GitHub Pages
 publishDir = 'public'
 
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
 [module]
 [module.hugoVersion]
 extended = false

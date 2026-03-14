@@ -1,0 +1,57 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $url := $u.String -}}
+{{- $imgResource := .Page.Scratch.Get "typoNilVariable" -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path -}}
+  {{- if .PageInner.Resources -}}
+    {{- $imgResource = .PageInner.Resources.Get $path -}}
+  {{- else if (or .PageInner.Parent .PageInner.Parent.Resources) -}}
+    {{- $imgResource = .PageInner.Parent.Resources.Get $path -}}
+  {{- end -}}
+  {{- $imgResource := or $imgResource (resources.Get $path) -}}
+  {{- with $imgResource -}}
+    {{- $url = .RelPermalink -}}
+    {{- with $u.RawQuery -}}
+      {{- $url = printf "%s?%s" $url . -}}
+    {{- end -}}
+    {{- with $u.Fragment -}}
+      {{- $url = printf "%s#%s" $url . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{ $url = $url | safeURL }}
+{{ $file_name_array := split $url "#" }}
+
+{{ $classes := "" }}
+
+{{ range $idx := seq (sub (len $file_name_array) 1) }}
+{{ $tag := index $file_name_array $idx }}
+{{ $classes = printf "%s img-%s" $classes $tag}}
+{{ end }}
+
+<figure class="{{ $classes }}">
+
+    {{ $text := .Text }}
+    {{ with $imgResource }}
+      {{ if eq $imgResource.MediaType.SubType "svg" }}
+        <div class="img-container">
+            <img loading="lazy" alt="{{ $text }}" src="{{ $url }}">
+        </div>
+      {{ else }}
+        <div class="img-container" style="--w: {{ .Width }}; --h: {{ .Height }};">
+            <img loading="lazy" alt="{{ $text }}" src="{{ $url }}" width="{{ .Width }}" height="{{ .Height }}">
+        </div>
+      {{ end }}
+    {{ else }}
+      <div class="img-container">
+          <img loading="lazy" alt="{{ $text }}" src="{{ $url }}">
+      </div>
+    {{ end }}
+
+    {{ with .Title }}
+    <div class="caption-container">
+        <figcaption> {{ . | markdownify}} </figcaption>
+    </div>
+    {{ end }}
+</figure>
