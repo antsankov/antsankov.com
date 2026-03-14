@@ -3,6 +3,7 @@ languageCode = 'en-us'
 defaultContentLanguage = 'en-us'
 title = 'antsankov'
 theme = 'typo'
+googleAnalytics = 'UA-57895312-1'
 
 # Publish directory for GitHub Pages
 publishDir = 'public'
