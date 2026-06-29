@@ -4,6 +4,7 @@ defaultContentLanguage = 'en-us'
 title = 'antsankov'
 theme = 'typo'
 googleAnalytics = 'UA-57895312-1'
+enableRobotsTXT = true
 
 # Publish directory for GitHub Pages
 publishDir = 'public'
@@ -20,6 +21,8 @@ min = "0.116.0"
 
 # Theme config
 [params]
+description = "Alex Tsankov is a senior site reliability and software engineer specializing in financial, tax, and legal infrastructure, cloud systems, cybersecurity, and applied AI."
+author = "Alex Tsankov"
 footerContent = "[Site Source Code](https://github.com/antsankov/antsankov.com) - Served with minimal JS and no external CSS."
 paginationSize = 10
 faviconPath = ""
@@ -50,3 +53,21 @@ weight = 1
 name = "Blog"
 url = "/blog/"
 weight = 2
+
+[mediaTypes]
+[mediaTypes."text/markdown"]
+suffixes = ["md"]
+
+[outputFormats]
+[outputFormats.Markdown]
+mediaType = "text/markdown"
+baseName = "index"
+isPlainText = true
+notAlternative = false
+
+[outputs]
+home = ["HTML", "RSS", "Markdown"]
+section = ["HTML", "RSS", "Markdown"]
+page = ["HTML", "Markdown"]
+taxonomy = ["HTML", "RSS"]
+term = ["HTML", "RSS"]

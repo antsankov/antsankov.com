@@ -1,6 +1,9 @@
 ---
 title: "From Wagon to a Jet Plane: Vibe Coding Musings from an Experienced Developer"
 date: 2025-11-28
+lastmod: 2026-06-28
+description: "Practical lessons from Alex Tsankov on architecture, review, context management, and maintainability when developing software with AI coding agents."
+author: "Alex Tsankov"
 draft: false
 tags: ["coding", "AI", "software", "agents"]
 ---
@@ -45,4 +48,4 @@ In both cases, you need to be ruthless about removing duplicated code, questioni
 ### Debugging agent-generated code can feel lonely in a way it never felt before
 Now that you are generating so much code with an agent, only you likely understand the design of the codebase. This means you can't ask anyone else for much help, and it can feel lonely debugging issues. Unit / Integration tests can help a lot, to at least make sure you're not regressing. Share design documents too help a co-worker at least get a handle on what's going on.
 
-Welcome to the jet age. 
+Welcome to the jet age.

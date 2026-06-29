@@ -1,6 +1,9 @@
 ---
 title: "Welcome to My Blog"
 date: 2025-11-28
+lastmod: 2026-06-28
+description: "An introduction to Alex Tsankov's personal engineering blog and its Hugo-based publishing setup."
+author: "Alex Tsankov"
 draft: false
 tags: ["welcome", "first-post"]
 ---

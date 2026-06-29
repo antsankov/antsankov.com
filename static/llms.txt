@@ -1,0 +1,18 @@
+# Alex Tsankov
+
+> Professional profile and technical writing by Alex Tsankov (also known as antsankov), a senior site reliability and software engineer specializing in financial, tax, and legal infrastructure.
+
+## Professional profile
+
+- [Alex Tsankov — professional profile](https://antsankov.com/index.md): Specialization in financial, tax, and legal infrastructure; career history, technical skills, education, selected work, identity links, and contact guidance.
+
+## Writing
+
+- [Blog index](https://antsankov.com/blog/index.md): Technical writing by Alex Tsankov.
+- [Vibe coding musings](https://antsankov.com/blog/vibe-coding/index.md): Lessons about architecture, review, context management, and maintainability when developing with AI coding agents.
+- [Welcome](https://antsankov.com/blog/welcome/index.md): Introduction to the site and publishing stack.
+
+## Discovery
+
+- [Markdown sitemap](https://antsankov.com/sitemap.md)
+- [XML sitemap](https://antsankov.com/sitemap.xml)
