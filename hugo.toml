@@ -17,7 +17,7 @@ unsafe = true
 [module]
 [module.hugoVersion]
 extended = false
-min = "0.116.0"
+min = "0.152.2"
 
 # Theme config
 [params]
